@@ -27,7 +27,7 @@ public class BoundaryEmmenager {
 					break;
 
 				case 2:
-					//TODO a completer
+					System.out.println("bienvenue villageois"+nomVisiteur )
 					break;
 
 				default:
