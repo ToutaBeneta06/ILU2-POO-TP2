@@ -35,9 +35,9 @@ public class Scenario {
 				village);
 
 		ControlPrendreEtal controlChercherEtal = new ControlPrendreEtal(
-				controlVerifierIdentite, village);
+			    village, controlVerifierIdentite);
 		ControlLibererEtal controlLibererEtal = new ControlLibererEtal(
-				controlTrouverEtalVendeur);
+			    village, controlTrouverEtalVendeur);
 		ControlAcheterProduit controlAcheterProduit = new ControlAcheterProduit(
 				controlVerifierIdentite, controlTrouverEtalVendeur, village);
 		ControlAfficherMarche controlAfficherMarche = new ControlAfficherMarche(
