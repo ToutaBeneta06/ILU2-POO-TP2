@@ -3,18 +3,17 @@ package villagegaulois;
 import personnages.Gaulois;
 
 public class Etal {
-	private String vendeur;
+	private Gaulois vendeur;
 	private String produit;
 	private int quantiteDebutMarche;
 	private int quantite;
 	private boolean etalOccupe = false;
-	private Object etals;
 
 	public boolean isEtalOccupe() {
 		return etalOccupe;
 	}
 
-	public String getVendeur() {
+	public Gaulois getVendeur() {
 		return vendeur;
 	}
 
@@ -26,8 +25,16 @@ public class Etal {
 		return produit;
 	}
 
+	public void occuperEtal(Gaulois gaulois, String produit, int quantite) {
+		this.vendeur = gaulois;
+		this.produit = produit;
+		this.quantite = quantite;
+		quantiteDebutMarche = quantite;
+		etalOccupe = true;
+	}
+
 	public void occuperEtal(String nomVendeur, String produit, int quantite) {
-		this.vendeur = nomVendeur;
+		this.vendeur = new Gaulois(nomVendeur, 0);
 		this.produit = produit;
 		this.quantite = quantite;
 		quantiteDebutMarche = quantite;
@@ -67,14 +74,12 @@ public class Etal {
 		String[] donneesVente = new String[5];
 		donneesVente[0] = String.valueOf(etalOccupe);
 		if (etalOccupe) {
-			donneesVente[1] = vendeur;  // vendeur est déjà un String
+			donneesVente[1] = vendeur.getNom();
 			donneesVente[2] = produit;
 			donneesVente[3] = String.valueOf(quantiteDebutMarche);
 			donneesVente[4] = String.valueOf(quantiteDebutMarche - quantite);
 		}
 		return donneesVente;
 	}
-
-
 
 }
